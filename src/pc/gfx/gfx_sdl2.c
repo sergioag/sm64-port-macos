@@ -192,6 +192,9 @@ static void gfx_sdl_init(const char *game_name, bool start_in_fullscreen) {
         inverted_scancode_table[scancode_rmapping_extended[i][0]] = inverted_scancode_table[scancode_rmapping_extended[i][1]] + 0x100;
     }
 
+#ifdef __APPLE__
+#pragma nounroll
+#endif
     for (size_t i = 0; i < sizeof(scancode_rmapping_nonextended) / sizeof(scancode_rmapping_nonextended[0]); i++) {
         inverted_scancode_table[scancode_rmapping_extended[i][0]] = inverted_scancode_table[scancode_rmapping_extended[i][1]];
         inverted_scancode_table[scancode_rmapping_extended[i][1]] += 0x100;

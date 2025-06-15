@@ -499,6 +499,10 @@ ifeq ($(TARGET_LINUX),1)
   PLATFORM_CFLAGS  := -DTARGET_LINUX `pkg-config --cflags libusb-1.0`
   PLATFORM_LDFLAGS := -lm -lpthread `pkg-config --libs libusb-1.0` -lasound -lpulse -no-pie
 endif
+ifeq ($(TARGET_OSX),1)
+  PLATFORM_CFLAGS := -DTARGET_OSX `pkg-config --cflags libusb-1.0`
+  PLATFORM_LDFLAGS := -lm -lpthread `pkg-config --libs libusb-1.0`
+endif
 ifeq ($(TARGET_WEB),1)
   PLATFORM_CFLAGS  := -DTARGET_WEB
   PLATFORM_LDFLAGS := -lm -no-pie -s TOTAL_MEMORY=20MB -g4 --source-map-base http://localhost:8080/ -s "EXTRA_EXPORTED_RUNTIME_METHODS=['callMain']"

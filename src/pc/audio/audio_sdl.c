@@ -1,6 +1,6 @@
 #if !defined(_WIN32) && !defined(_WIN64)
 
-#if defined(__MINGW32__) || defined(__APPLE__)
+#if defined(__MINGW32__) || defined(TARGET_OSX)
 #include <SDL.h>
 #else
 #include <SDL2/SDL.h>

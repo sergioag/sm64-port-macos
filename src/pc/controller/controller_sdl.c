@@ -5,7 +5,7 @@
 #include <stdbool.h>
 #include <math.h>
 
-#ifdef __APPLE__
+#ifdef TARGET_OSX
 #include <SDL.h>
 #else
 #include <SDL2/SDL.h>

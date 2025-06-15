@@ -20,7 +20,7 @@
 #define GL_GLEXT_PROTOTYPES 1
 #include "SDL_opengl.h"
 #else
-# ifdef __APPLE__
+# ifdef TARGET_OSX
 #  include <SDL.h>
 #  define GL_GLEXT_PROTOTYPES 1
 #  include <SDL_opengl.h>
